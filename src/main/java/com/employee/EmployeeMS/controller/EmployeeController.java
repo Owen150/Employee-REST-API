@@ -2,11 +2,18 @@ package com.employee.EmployeeMS.controller;
 
 
 import com.employee.EmployeeMS.model.Employee;
+import com.employee.EmployeeMS.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeeController {
+
+    @Autowired
+    private EmployeeService employeeService;
     @Value("${app.name}")
     private String appName;
 
@@ -20,8 +27,8 @@ public class EmployeeController {
     
     //Get All Employees
     @GetMapping("/employees")
-    public String getEmployees(){
-        return "Displaying the List of Employees";
+    public List<Employee> getEmployees(){
+        return employeeService.getEmployees();
     }
 
     //Get Employee by ID
