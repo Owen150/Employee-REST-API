@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EmployeeController {
-    @Value("${app.name: Employee Tracker}")
+    @Value("${app.name}")
     private String appName;
 
-    @Value("${app.version: Version 1}")
+    @Value("${app.version}")
     private String appVersion;
 
     @GetMapping("/version")

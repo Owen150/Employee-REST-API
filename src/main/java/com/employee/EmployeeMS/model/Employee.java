@@ -8,8 +8,12 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Employee {
+    //@JsonProperty("full_name")
     private String name;
+
+    //@JsonIgnore
     private Long age;
+
     private String location;
     private String email;
     private String department;
